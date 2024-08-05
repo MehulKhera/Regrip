@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <!-- Link to the CSS file for styling -->
+    <link rel="stylesheet" href="style.css">
+    <!-- jQuery library for handling AJAX requests and DOM manipulation -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Link to the JavaScript file for functionality, deferred to load after HTML -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <!-- Navbar containing the logo -->
+    <nav class="navbar">
+        <img src="regrip logo.png" alt="Regrip logo" class="regrip">
+    </nav>
+    <!-- Main dashboard container -->
+    <div class="dashboard">
+        <div class="card">
+            <!-- Search input for city name and button to trigger search -->
+            <div class="search">
+                <input type="text" placeholder="Enter city name" spellcheck="false">
+                <button><img src="search.png" alt="search icon"></button>
+            </div>
+
+            <!-- Weather information display -->
+            <div class="weather">
+                <img src="rain.png" class="weather-icon" alt="weather icon">
+                <h1 class="temp">22°C</h1>
+                <h2 class="city">New York</h2>
+                <div class="details">
+                    <div class="col">
+                        <img src="humidity.png" alt="humidity icon">
+                        <div>
+                            <p class="humidity">50%</p>
+                            <p>Humidity</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <img src="wind.png" alt="wind icon">
+                        <div>
+                            <p class="wind">15 km/h</p>
+                            <p>Wind Speed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Button to toggle between Celsius and Fahrenheit -->
+            <div class="toggle">
+                <button class="toggle-button">Show in °F</button>
+            </div>
+            <!-- Error message display, initially hidden -->
+            <div class="error" style="display: none;">City not found. Please try again.</div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
