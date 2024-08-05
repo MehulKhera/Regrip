@@ -26,18 +26,29 @@ function checkWeather(city) {
             $(".humidity").text(data.main.humidity + "%");
             $(".wind").text(data.wind.speed + "km/h");
 
-            // Update weather icon based on the weather condition
+            // Variable to store the background image file name
+            let bgImage = '';
+
+            // Update weather icon and background image based on the weather condition
             if (data.weather[0].main === "Clouds") {
                 $(".weather-icon").attr("src", "clouds.png");
+                bgImage = "clouds.jpg";
             } else if (data.weather[0].main === "Clear") {
                 $(".weather-icon").attr("src", "clear.png");
+                bgImage = "clear.jpg";
             } else if (data.weather[0].main === "Rain") {
                 $(".weather-icon").attr("src", "rain.png");
+                bgImage = "green.jpg";
             } else if (data.weather[0].main === "Drizzle") {
                 $(".weather-icon").attr("src", "drizzle.png");
+                bgImage = "drizzle.jpg";
             } else if (data.weather[0].main === "Mist") {
                 $(".weather-icon").attr("src", "mist.png");
+                bgImage = "mist.jpg";
             }
+
+            // Change the background image of the card
+            $(".card").css("background-image", `url('./${bgImage}')`);
 
             // Hide any error message
             $(".error").hide();
